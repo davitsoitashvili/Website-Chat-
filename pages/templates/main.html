@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Chat App</title>
+      <style>
+/* Force scrollbars onto browser window */
+body {
+margin-bottom: 1000%;
+}
+
+/* Box styles */
+.myBox {
+border: none;
+padding: 10px;
+font: 20px/30px sans-serif;
+width: 1000px;
+height: 1000px;
+overflow: scroll;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+}
+
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 10px olivedrab;
+border-radius: 10px;
+}
+
+
+</style>
+  </head>
+  <body>
+
+  <div style="text-align: right">
+<form action="{% url 'logout' %}" method="get">
+    {% csrf_token %}
+    <button class="btn btn-primary" style="margin-top: 5px;width:100px" type="submit" value="logout">Logout</button>
+
+</form>
+      <h4 style="margin-right: 20px; margin-top: 10px;color: red"><i>{{ userinfo }}</i></h4>
+</div>
+
+
+<form action="{% url 'main page' %}" method="post">
+    {% csrf_token %}
+    <p style="margin-right: 1000px">{{ form.message }}</p>
+    <input class="btn btn-success" style="width: 410px;text-align: center" type="submit" value="Send">
+
+</form>
+<div class="myBox">
+    {% for message in messages %}
+        <p style="size: 10px;color: green">{{ message.author }}: {{ message.message }}</p>
+
+    {% endfor %}
+
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
