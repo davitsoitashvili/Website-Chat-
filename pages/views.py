@@ -27,8 +27,6 @@ def logoutView(request):
     if request.GET:
         logout(request)
         return redirect('login page')
-    else:
-        return redirect('main page')
 
     return render(request, 'main.html', {})
 
