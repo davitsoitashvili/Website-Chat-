@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="207e058c-701f-4352-b6fb-21590e2f94c4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/authentication/customforms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/authentication/customforms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,7 @@
       <workItem from="1574608447319" duration="12780000" />
       <workItem from="1574624399340" duration="3004000" />
       <workItem from="1574691960349" duration="40000" />
-      <workItem from="1574692205219" duration="1480000" />
+      <workItem from="1574692205219" duration="1759000" />
     </task>
     <servers />
   </component>
