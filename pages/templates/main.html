@@ -50,6 +50,10 @@ border-radius: 10px;
       <h4 style="margin-right: 20px; margin-top: 10px;color: red"><i>{{ userinfo }}</i></h4>
 </div>
 
+<div>
+    <a href="{% url 'main page' %}">New Messages</a>
+
+</div>
 
 <form action="{% url 'main page' %}" method="post">
     {% csrf_token %}

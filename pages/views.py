@@ -18,10 +18,6 @@ def mainView(request):
         Message(author=request.user.first_name, message=message).save()
         messages = Message.objects.all()
 
-        if len(Message.objects.all()) != length:
-            return redirect("main page")
-
-
 
     return render(request, 'main.html', {'messages':messages,'form':form,"userinfo":User})
 
@@ -31,6 +27,9 @@ def logoutView(request):
     if request.GET:
         logout(request)
         return redirect('login page')
+    else:
+        return redirect('main page')
 
     return render(request, 'main.html', {})
+
 
