@@ -10,12 +10,17 @@ def mainView(request):
     User = f"სახელი: {request.user.first_name} გვარი:{request.user.last_name}"
     form = MessageForm()
     messages = Message.objects.all()
+    length = messages
+
     if request.POST:
         form = MessageForm(request.POST)
         message = form['message'].value()
         Message(author=request.user.first_name, message=message).save()
         messages = Message.objects.all()
-        return redirect('main page')
+
+        if len(Message.objects.all()) != length:
+            return redirect("main page")
+
 
 
     return render(request, 'main.html', {'messages':messages,'form':form,"userinfo":User})
