@@ -44,26 +44,26 @@ border-radius: 10px;
   <div style="text-align: right">
 <form action="{% url 'logout' %}" method="get">
     {% csrf_token %}
-    <button class="btn btn-primary" style="margin-top: 5px;width:100px" type="submit" value="logout">Logout</button>
+    <button class="btn btn-primary" style="margin-top: 5px;width:100px" type="submit" value="logout">გამოსვლა</button>
 
 </form>
       <h4 style="margin-right: 20px; margin-top: 10px;color: red"><i>{{ userinfo }}</i></h4>
 </div>
 
 <div>
-    <a href="{% url 'main page' %}">New Messages</a>
+
 
 </div>
 
 <form action="{% url 'main page' %}" method="post">
     {% csrf_token %}
     <p>{{ form.message }}</p>
-    <input class="btn btn-success" style="width: 410px;text-align: center" type="submit" value="Send">
+    <input class="btn btn-success" style="width: 410px;text-align: center" type="submit" value="მესიჯის გაგზავნა">    <a href="{% url 'main page' %}">ახალი მესიჯები</a>
 
 </form>
 <div class="myBox">
     {% for message in messages %}
-        <p style="size: 10px;color: green">{{ message.author }}: {{ message.message }}</p>
+        <p style="size: 10px;color: red">{{ message.author }}: {{ message.message }}</p>
 
     {% endfor %}
 
