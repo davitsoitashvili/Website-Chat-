@@ -16,3 +16,5 @@ class RegisterForm(SignUpForm):
         fields = ('first_name','last_name','email','age','password1','password2')
 
 
+
+
