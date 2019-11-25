@@ -15,6 +15,7 @@ def mainView(request):
         message = form['message'].value()
         Message(author=request.user.first_name, message=message).save()
         messages = Message.objects.all()
+        return redirect('main page')
 
 
     return render(request, 'main.html', {'messages':messages,'form':form,"userinfo":User})
