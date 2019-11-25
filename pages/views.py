@@ -9,7 +9,7 @@ from django.contrib.auth import logout
 def mainView(request):
     User = f"სახელი: {request.user.first_name} გვარი:{request.user.last_name}"
     form = MessageForm()
-    messages = None
+    messages = Message.objects.all()
     if request.POST:
         form = MessageForm(request.POST)
         message = form['message'].value()
