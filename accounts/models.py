@@ -33,8 +33,6 @@ class User(AbstractBaseUser):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    password1 = models.CharField(max_length=100,verbose_name="Password")
-    password2 = models.CharField(max_length=100,verbose_name="Confirmation Password")
     age = models.IntegerField()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)

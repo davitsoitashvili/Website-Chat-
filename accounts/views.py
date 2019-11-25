@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from accounts.forms import RegisterForm
+from accounts.authentication.customforms import SignInForm
 from accounts.models import User
-from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 
 def signUpVIew(request):
@@ -18,13 +18,13 @@ def signUpVIew(request):
 
 def signInView(request):
     if request.POST:
-        form = AuthenticationForm(data=request.POST)
+        form = SignInForm(data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
             return redirect("main page")
     else:
-        form = AuthenticationForm()
+        form = SignInForm()
 
 
 
