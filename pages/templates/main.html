@@ -38,26 +38,17 @@ border-radius: 10px;
 
 
 </style>
-
-       <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
-  <style>
-    .fonts {
-      border: 2px solid green;
-      color: green;
-    }
-  </style>
-  <script type="text/javascript">
-    $(function() {
-      //This setTimeout function execute or call automatically when 5 second completed.
-      setTimeout(function() {
-        $("#refresh").refresh()
-      }, 5000);
-    });
-
-  </script>
   </head>
   <body>
 
+
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            function update(){
+                $('#refresh').load("main.html #refresh ");
+            }
+            setInterval( 'update()', 1000 );
+        </script>
 
 
   <div style="text-align: right">
