@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-      <meta http-equiv="refresh" content="3">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -42,6 +41,14 @@ border-radius: 10px;
   </head>
   <body>
 
+   <script src="http://code.jquery.com/jquery-latest.js">
+  <script type="text/javascript">
+    setInterval("my_function();",5000);
+    function my_function(){
+      $('#refresh').load(location.href + ' #time');
+    }
+  </script>
+
   <div style="text-align: right">
 <form action="{% url 'logout' %}" method="get">
     {% csrf_token %}
@@ -62,7 +69,7 @@ border-radius: 10px;
     <input class="btn btn-success" style="width: 410px;text-align: center" type="submit" value="მესიჯის გაგზავნა">    <a href="{% url 'main page' %}">ახალი მესიჯები</a>
 
 </form>
-<div class="myBox">
+<div class="myBox" id="refresh">
     {% for message in messages %}
         <p style="size: 10px;color: red">{{ message.author }}: {{ message.message }}</p>
 
