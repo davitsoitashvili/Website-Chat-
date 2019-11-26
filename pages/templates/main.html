@@ -41,16 +41,6 @@ border-radius: 10px;
   </head>
   <body>
 
-
-  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script>
-            function update(){
-                $('#refresh').load("main.html #refresh ");
-            }
-            setInterval( 'update()', 1000 );
-        </script>
-
-
   <div style="text-align: right">
 <form action="{% url 'logout' %}" method="get">
     {% csrf_token %}
@@ -71,7 +61,7 @@ border-radius: 10px;
     <input class="btn btn-success" style="width: 410px;text-align: center" type="submit" value="მესიჯის გაგზავნა">    <a href="{% url 'main page' %}">ახალი მესიჯები</a>
 
 </form>
-<div class="myBox" id="refresh">
+<div class="myBox">
     {% for message in messages %}
         <p style="size: 10px;color: red">{{ message.author }}: {{ message.message }}</p>
 
