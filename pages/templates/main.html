@@ -41,13 +41,14 @@ border-radius: 10px;
   </head>
   <body>
 
-   <script src="http://code.jquery.com/jquery-latest.js">
-  <script type="text/javascript">
-    setInterval("my_function();",5000);
-    function my_function(){
-      $('#refresh').load(location.href + ' #time');
+  <script src="http://code.jquery.com/jquery-latest.js">
+      <script type="text/javascript">
+          setInterval("my_function();",5000);
+          function my_function(){
+              $('#refresh').load(location.href + ' #time');
     }
   </script>
+
 
   <div style="text-align: right">
 <form action="{% url 'logout' %}" method="get">
@@ -76,6 +77,10 @@ border-radius: 10px;
     {% endfor %}
 
 </div>
+
+     <div id="time">
+    <?php echo date('H:i:s');?>
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
